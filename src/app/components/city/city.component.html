@@ -1,0 +1,38 @@
+<div class="row justify-content-md-center">
+	<div class="container">
+		<h2 class="city__title">
+			{{ city.name }}, {{ city.sys.country }} <br>
+			<span>{{ city.dt | date }}</span>
+		</h2>
+		<div class="col city no-gutters">
+			<div class="col-6 city__temp">
+				<span class="temp__var">{{ city.main.temp }}</span>
+				<div class="temp__icon">
+					<img src="assets/img/cloud02.png"> <!-- Nao consegui iterar os dados  {{ city.weather.icon }} -->
+					<span>overcast clouds</span><!-- Nao consegui iterar os dados  {{ city.weather.description }} -->
+				</div>
+			</div>
+			<ul class="col-5 temp__stats">
+				<li>
+					<span class="title">Máx</span>
+					<span class="value max">{{ city.main.temp_max }} °C</span>
+				</li>
+				<li>
+					<span class="title">Min</span>
+					<span class="value min">{{ city.main.temp_min }} °C</span>
+				</li>
+				<li>
+					<span class="title">Sunrise</span>
+					<span class="value">{{ city.sys.sunrise | date:'shortTime' }}</span>
+				</li>
+				<li>
+					<span class="title">Sunset</span>
+					<span class="value">{{ city.sys.sunset | date:'shortTime' }}</span>
+				</li>
+			</ul>
+			
+			<five></five>
+
+		</div>
+	</div>
+</div>

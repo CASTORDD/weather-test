@@ -1,0 +1,19 @@
+<h4 class="forecast__title">5 day weather forecast</h4>
+<ul class="col forecast__list">
+  <li *ngFor="let item of days">
+    <div class="col-4 forecast__data">
+      <span>
+        {{ item.dt | date }}
+        <small>{{ item.dt | date:'shortTime' }}</small>
+      </span>
+    </div>
+    <div class="col-4 forecast__icon">
+      <img src="assets/img/cloud02.png"><!-- Nao consegui iterar os dados  {{ item.weather.icon }} -->
+      <span>overcast clouds</span>
+    </div>
+    <div class="col-4 forecast__temp">
+      <span class="max">{{ item.main.temp_max }} °C</span>
+      <span class="min">{{ item.main.temp_min }} °C</span>
+    </div>
+  </li>
+</ul>

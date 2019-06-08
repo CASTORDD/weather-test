@@ -1,0 +1,27 @@
+<div class="row justify-content-md-center">
+  <div class="container">
+    <ul class="col col-sm-12 resultados">
+      <li class="col col-sm-12 item" *ngFor="let city of list | search: name">
+        <a [routerLink]="['/city/', city.id ]">    
+          <div class="col-4 item__temp">
+            <span>{{ city.main.temp }} <small>°C</small></span>
+          </div>
+          <div class="col-4 item__data">
+            <span class="data__title">
+              {{ city.name }}, {{ city.sys.country }} 
+              <img src="http://openweathermap.org/images/flags/{{(city.sys.country).toLowerCase()}}.png">
+            </span>
+            <span class="data__var max"><small>Máx</small>{{ city.main.temp_max }} °C</span>
+            <span class="data__var min"><small>Min</small>{{ city.main.temp_max }} °C</span>
+          </div>
+          <div class="item__icon">
+            <span>
+              <img src="https://openweathermap.org/img/w/{{city.weather.icon}}.png" alt="{{city.weather.icon}}">
+            </span>
+            <span>{{ city.weather.description }}</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
